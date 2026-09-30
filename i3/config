@@ -1,0 +1,48 @@
+set $mod Mod4
+font pango:monospace 10
+floating_modifier $mod
+
+# apps
+bindsym $mod+Return exec kitty
+bindsym $mod+space exec dmenu_run -nb '#282c34' -nf '#abb2bf' -sb '#61afef' -sf '#282c34'
+bindsym $mod+q kill
+
+# focus / déplacement (flèches)
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# layout
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+
+# workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+
+# session
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+# style
+default_border pixel 3
+gaps inner 5
+gaps outer 2
+client.focused          #000000 #000000 #000000 #000000   #000000
+client.focused_inactive #ffffff #ffffff #ffffff #ffffff   #ffffff
+client.unfocused        #ffffff #ffffff #ffffff #ffffff   #ffffff
+
+exec_always --no-startup-id feh --bg-fill ~/Images/wall/2.png
